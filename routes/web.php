@@ -15,7 +15,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
     Route::resource('posts', \App\Http\Controllers\PostController::class);
     Route::post('posts/{post}/like', [\App\Http\Controllers\PostController::class, 'like'])->name('posts.like');
     Route::post('posts/{post}/dislike', [\App\Http\Controllers\PostController::class, 'dislike'])->name('posts.dislike');
